@@ -44,6 +44,11 @@ public class PlayerController : MonoBehaviour
         var cameraRotation = Quaternion.Euler(0, _playerCamera.transform.eulerAngles.y, 0);
         _moveDirection = cameraRotation * _inputDirection;
 
+        if (_moveDirection != Vector3.zero)
+        {
+            transform.forward = _moveDirection;
+        }
+
         _controller.Move(_movement.MoveSpeed.ModifiedValue * Time.deltaTime * _moveDirection);
     }
     #endregion
@@ -51,13 +56,11 @@ public class PlayerController : MonoBehaviour
     #region Jumping
     public void Jump_Control(InputAction.CallbackContext context)
     {
-        _jumpPressed = false;
-        if (context.performed)
+        _jumpPressed = context.ReadValueAsButton();
+
+        if (context.canceled && _velocity.y > 0 && !_jumping.IsGrounded)
         {
-            _jumpPressed = true;
-        }
-        else if (context.canceled)
-        {
+            Debug.Log("jump canceled");
             _velocity.y /= _jumping.JumpCancelMod;
         }
     }
@@ -70,8 +73,9 @@ public class PlayerController : MonoBehaviour
             _jumping.JumpCount = _jumping.MaxJumpCount.ModifiedValue;
         }
 
-        if (_jumpPressed && _jumping.JumpCount > 0)
+        if (_jumpPressed && _jumping.JumpCount > 0 && _velocity.y <= 0)
         {
+            Debug.Log("jump");
             _jumping.JumpCount--;
             _velocity.y += Mathf.Sqrt(_jumping.JumpHeight.ModifiedValue * -2.0f * _jumping.Gravity.ModifiedValue);
         }
@@ -88,6 +92,6 @@ public class PlayerController : MonoBehaviour
         UpdateMove();
         UpdateJump();
 
-        _controller.Move(_velocity);
+        _controller.Move(_velocity * Time.deltaTime);
     }
 }

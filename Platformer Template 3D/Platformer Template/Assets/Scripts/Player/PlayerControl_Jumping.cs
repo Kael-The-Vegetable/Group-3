@@ -6,8 +6,11 @@ using UnityEngine;
 public class PlayerControl_Jumping
 {
     [field: SerializeField] public bool IsGrounded { get; set; }
+    [field: SerializeField] public int JumpCount { get; set; }
+    [field: SerializeField] public Moddable<float> Gravity { get; set; } = new() { BaseValue = Physics.gravity.y };
     [field: SerializeField] public Moddable<float> JumpHeight { get; set; }
     [field: SerializeField] public Moddable<int> MaxJumpCount { get; set; }
+
     [field: SerializeField] public float JumpCancelMod { get; set; }
     [field: SerializeField] public float FallingGravityMod { get; set; }
 }

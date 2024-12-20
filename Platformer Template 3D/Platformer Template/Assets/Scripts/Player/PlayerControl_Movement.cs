@@ -8,5 +8,4 @@ public class PlayerControl_Movement
     [field: SerializeField] public Moddable<float> MoveSpeed { get; set; }
     [field: SerializeField] public Moddable<float> GroundSpeed { get; set; }
     [field: SerializeField] public Moddable<float> AirSpeed { get; set; }
-
 }

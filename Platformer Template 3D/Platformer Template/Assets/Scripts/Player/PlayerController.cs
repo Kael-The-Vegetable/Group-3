@@ -29,6 +29,19 @@ public class PlayerController : MonoBehaviour
         {
             _playerCamera = Camera.main;
         }
+
+        // adds the falling multiplier to the player's gravity.
+        _jumping.Gravity.Modifiers.Add(new ConditionalModifier<float>(
+            modifier: _jumping.FallingGravityMod,
+            condition: () => _velocity.y < 0));
+
+        // add the air and ground speed modifiers to the base move speed
+        _movement.MoveSpeed.Modifiers.Add(new ConditionalModifier<float>(
+            modifier: _movement.GroundSpeed,
+            condition: () => _jumping.IsGrounded));
+        _movement.MoveSpeed.Modifiers.Add(new ConditionalModifier<float>(
+            modifier: _movement.AirSpeed,
+            condition: () => !_jumping.IsGrounded));
     }
 
     #region Movement
@@ -80,8 +93,7 @@ public class PlayerController : MonoBehaviour
             _velocity.y += Mathf.Sqrt(_jumping.JumpHeight.ModifiedValue * -2.0f * _jumping.Gravity.ModifiedValue);
         }
 
-        // TODO: Use an actual modifier in place of fallingGravityMod
-        _velocity.y += (_velocity.y < 0 ? _jumping.FallingGravityMod : 1f) * _jumping.Gravity.ModifiedValue * Time.deltaTime;
+        _velocity.y += _jumping.Gravity.ModifiedValue * Time.deltaTime;
     }
     #endregion
     

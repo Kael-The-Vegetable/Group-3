@@ -12,5 +12,5 @@ public class PlayerControl_Jumping
     [field: SerializeField] public Moddable<int> MaxJumpCount { get; set; }
 
     [field: SerializeField] public float JumpCancelMod { get; set; }
-    [field: SerializeField] public float FallingGravityMod { get; set; }
+    [field: SerializeField] public TotalMultiplier FallingGravityMod { get; set; }
 }

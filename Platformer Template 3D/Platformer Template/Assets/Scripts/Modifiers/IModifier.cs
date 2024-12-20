@@ -4,20 +4,15 @@ using UnityEngine;
 public interface IModifier<T>
 {
     /// <summary>
-    /// User-defined method of adding two values of type <typeparamref name="T"/>
+    /// The order of this modifier. Lower numbers are applied first.
     /// </summary>
-    /// <remarks>
-    /// This method is required because modifiers are applied additively.
-    /// </remarks>
-    /// <param name="a"></param>
-    /// <param name="b"></param>
-    /// <returns>The sum of <paramref name="a"/> and <paramref name="b"/>.</returns>
-    public T Add(T a, T b);
+    public int Order => 0;
 
     /// <summary>
     /// Applies the modifier to the <paramref name="baseValue"/>
     /// </summary>
-    /// <param name="baseValue"></param>
+    /// <param name="baseValue">The base value being modified.</param>
+    /// <param name="modValue">The current value before the application of this modifier.</param>
     /// <returns>The modified value.</returns>
-    public T ApplyModifier(T baseValue);
+    public T ApplyModifier(T baseValue, T modValue);
 }

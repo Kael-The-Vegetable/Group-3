@@ -15,7 +15,7 @@ public class ModifierTest : MonoBehaviour
 
         foreach (var modifier in _modifiers)
         {
-            _modifiableValue.Modifiers.Add(new PercentIncrease(modifier));
+            _modifiableValue.Modifiers.Add(new PercentBonus(modifier));
         }
 
         _modValue = _modifiableValue.ModifiedValue;

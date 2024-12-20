@@ -3,7 +3,7 @@ using System.Linq;
 
 public class ModifierList<T>
 {
-    private List<IModifier<T>> _modifiers;
+    private List<IModifier<T>> _modifiers = new();
 
     public IModifier<T> this[int i] => _modifiers[i];
     public int Count => _modifiers.Count;

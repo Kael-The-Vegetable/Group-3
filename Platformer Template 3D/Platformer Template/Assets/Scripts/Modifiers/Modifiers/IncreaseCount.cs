@@ -12,4 +12,6 @@ public class IncreaseCount : IModifier<int>
     public int Add(int a, int b) => a + b;
 
     public int ApplyModifier(int baseValue) => Amount;
+
+    public static explicit operator IncreaseCount(int baseValue) => new(baseValue);
 }

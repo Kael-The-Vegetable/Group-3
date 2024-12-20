@@ -18,4 +18,6 @@ public class PercentIncrease : IModifier<float>
     {
         return Percentage / 100f * baseValue;
     }
+
+    public static explicit operator PercentIncrease(float baseValue) => new(baseValue);
 }

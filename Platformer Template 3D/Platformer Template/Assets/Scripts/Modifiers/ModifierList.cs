@@ -25,15 +25,28 @@ public class ModifierList<T>
     }
 
     /// <summary>
-    /// Additively applies every modifier in the list to a given <paramref name="baseValue"/>.
+    /// <inheritdoc cref="ModifierList.ApplyModifiers{T}(IEnumerable{IModifier{T}}, T)"/>
     /// </summary>
-    /// <param name="baseValue"></param>
-    /// <returns>The modified value.</returns>
+    /// <param name="baseValue"><inheritdoc cref="ModifierList.ApplyModifiers{T}(IEnumerable{IModifier{T}}, T)"/></param>
+    /// <returns><inheritdoc cref="ModifierList.ApplyModifiers{T}(IEnumerable{IModifier{T}}, T)"/></returns>
     public T ApplyModifiers(T baseValue)
+    {
+        return _modifiers.ApplyModifiers(baseValue);
+    }
+}
+
+public static class ModifierList
+{
+    /// <summary>
+    /// Applies every modifier in the list to a given <paramref name="baseValue"/>.
+    /// </summary>
+    /// <param name="baseValue">The base value to be modified.</param>
+    /// <returns>The modified value.</returns>
+    public static T ApplyModifiers<T>(this IEnumerable<IModifier<T>> modifiers, T baseValue)
     {
         var modValue = baseValue;
 
-        foreach (var modifier in _modifiers)
+        foreach (var modifier in modifiers)
         {
             if (!modifier.Equals(default))
             {

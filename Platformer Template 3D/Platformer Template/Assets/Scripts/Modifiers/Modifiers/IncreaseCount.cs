@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class IncreaseCount : IModifier<int>
 {
-    [field: SerializeField, Tooltip("The amount by which to increse the count.")] public int Amount { get; set; }
+    [field: SerializeField, Tooltip("The amount by which to increase the count.")] public int Amount { get; set; }
 
     public IncreaseCount(int amount) => Amount = amount;
 

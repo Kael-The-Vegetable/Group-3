@@ -21,24 +21,4 @@ public class ModifierList<T> : List<IModifier<T>>
 
         return modValue;
     }
-
-    /// <summary>
-    /// Multiplicatively applies every modifier in the list to a given <paramref name="baseValue"/>.
-    /// </summary>
-    /// <param name="baseValue"></param>
-    /// <returns><inheritdoc cref="ApplyModifiersAdditive(T)"/></returns>
-    public T ApplyModifiersMultiplicative(T baseValue)
-    {
-        var modValue = baseValue;
-
-        foreach (var modifier in this)
-        {
-            if (!modifier.Equals(default))
-            {
-                modValue = modifier.ApplyModifier(modValue);
-            }
-        }
-
-        return modValue;
-    }
 }

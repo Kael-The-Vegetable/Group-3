@@ -11,7 +11,7 @@ public class Moddable<TValue>
     public TValue BaseValue { get => _baseValue; set => _baseValue = value; }
     public ModifierList<TValue> Modifiers { get; set; }
 
-    public TValue ModifiedValue => Modifiers.ApplyAllModifiers(BaseValue);
+    public TValue ModifiedValue => Modifiers.ApplyModifiersAdditive(BaseValue);
 
     public Moddable() => Modifiers = new();
 }

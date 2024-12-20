@@ -11,5 +11,5 @@ public class IncreaseCount : IModifier<int>
 
     public int Add(int a, int b) => a + b;
 
-    public int ApplyModifier(int baseValue) => baseValue + Amount;
+    public int ApplyModifier(int baseValue) => Amount;
 }

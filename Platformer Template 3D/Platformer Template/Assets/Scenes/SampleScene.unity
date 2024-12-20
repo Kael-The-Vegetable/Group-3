@@ -1734,6 +1734,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150050534}
   m_CullTransparentMesh: 1
+--- !u!1 &1358401551
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1358401553}
+  - component: {fileID: 1358401552}
+  m_Layer: 0
+  m_Name: Modifier Test
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1358401552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358401551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb6bfd153e1a364fb4a139a910add13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _modifiableValue:
+    _baseValue: 10
+  _modValue: 20
+  _modifiers:
+  - 80
+  - 20
+--- !u!4 &1358401553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358401551}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 6.47, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1414880337
 GameObject:
   m_ObjectHideFlags: 0
@@ -2173,44 +2223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f74a61e020368f4fae777348c367856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
-  isOpen: 0
-  onMenuOpened:
-    m_PersistentCalls:
-      m_Calls: []
-  onMenuClosed:
-    m_PersistentCalls:
-      m_Calls: []
-  onMenuShown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1473048868}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  onMenuHidden:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1473048868}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1473048870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2457,44 +2469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f74a61e020368f4fae777348c367856, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 1473048869}
-  isOpen: 0
-  onMenuOpened:
-    m_PersistentCalls:
-      m_Calls: []
-  onMenuClosed:
-    m_PersistentCalls:
-      m_Calls: []
-  onMenuShown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1770122615}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 1
-  onMenuHidden:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1770122615}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
 --- !u!114 &1770122618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3024,3 +2998,4 @@ SceneRoots:
   - {fileID: 1830215449}
   - {fileID: 1050265816}
   - {fileID: 556573159}
+  - {fileID: 1358401553}

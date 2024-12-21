@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
             _playerCamera = Camera.main;
         }
 
-        // adds the falling multiplier to the player's gravity.
+        // add the falling multiplier to the player's gravity.
         _jumping.Gravity.Modifiers.Add(new ConditionalModifier<float>(
             modifier: _jumping.FallingGravityMod,
             condition: () => _velocity.y < 0));

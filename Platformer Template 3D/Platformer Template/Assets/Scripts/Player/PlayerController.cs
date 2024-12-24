@@ -47,9 +47,7 @@ public class PlayerController : MonoBehaviour
     #region Movement
     public void Move_Control(InputAction.CallbackContext context)
     {
-        Vector2 input = context.ReadValue<Vector2>();
-
-        _inputDirection = new Vector3(input.x, 0, input.y);
+        _inputDirection = _inputDirection.SetHorizontal(context.ReadValue<Vector2>());
     }
 
     private void UpdateMove()
@@ -57,12 +55,9 @@ public class PlayerController : MonoBehaviour
         var cameraRotation = Quaternion.Euler(0, _playerCamera.transform.eulerAngles.y, 0);
         _moveDirection = cameraRotation * _inputDirection;
 
-        if (_moveDirection != Vector3.zero)
-        {
-            transform.forward = _moveDirection;
-        }
+        var move = _movement.MoveSpeed.ModifiedValue * _moveDirection;
 
-        _controller.Move(_movement.MoveSpeed.ModifiedValue * Time.deltaTime * _moveDirection);
+        _velocity = _velocity.SetHorizontal(Vector2.MoveTowards(_velocity.GetHorizontal(), move.GetHorizontal(), _movement.MoveSpeed.ModifiedValue * 2 * Time.deltaTime));
     }
     #endregion
 
@@ -103,6 +98,11 @@ public class PlayerController : MonoBehaviour
 
         UpdateMove();
         UpdateJump();
+
+        if (_velocity.GetHorizontal() != Vector2.zero)
+        {
+            transform.forward = _velocity.Flatten().normalized;
+        }
 
         _controller.Move(_velocity * Time.deltaTime);
     }

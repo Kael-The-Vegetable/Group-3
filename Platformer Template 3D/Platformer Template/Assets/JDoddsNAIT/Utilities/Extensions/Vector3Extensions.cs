@@ -26,7 +26,7 @@ public static class Vector3Extensions
     }
 
     /// <summary>
-    /// Returns the a copy of the <see cref="Vector3"/> with a y component of 0.
+    /// Returns a copy of the <see cref="Vector3"/> with a y component of 0.
     /// </summary>
     /// <param name="v"></param>
     /// <returns></returns>

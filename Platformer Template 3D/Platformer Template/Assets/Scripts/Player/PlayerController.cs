@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     #region Movement
     public void Move_Control(InputAction.CallbackContext context)
     {
-        _inputDirection = _inputDirection.SetHorizontal(context.ReadValue<Vector2>());
+        _inputDirection.SetHorizontal(context.ReadValue<Vector2>());
     }
 
     private void UpdateMove()
@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
 
         var move = _movement.MoveSpeed.ModifiedValue * _moveDirection;
 
-        _velocity = _velocity.SetHorizontal(Vector2.MoveTowards(_velocity.GetHorizontal(), move.GetHorizontal(), _movement.MoveSpeed.ModifiedValue * 2 * Time.deltaTime));
+        _velocity.SetHorizontal(Vector2.MoveTowards(_velocity.GetHorizontal(), move.GetHorizontal(), _movement.MoveSpeed.ModifiedValue * 2 * Time.deltaTime));
     }
     #endregion
 

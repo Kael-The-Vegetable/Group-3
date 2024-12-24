@@ -19,10 +19,10 @@ public static class Vector3Extensions
     /// </summary>
     /// <param name="v"></param>
     /// <param name="value"></param>
-    public static Vector3 SetHorizontal(this Vector3 v, Vector2 value)
+    public static void SetHorizontal(this ref Vector3 v, Vector2 value)
     {
-        v = new(value.x, v.y, value.y);
-        return v;
+        v.x = value.x;
+        v.z = value.y;
     }
 
     /// <summary>

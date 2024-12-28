@@ -6,6 +6,6 @@ using UnityEngine;
 public class PlayerControl_Movement
 {
     [field: SerializeField] public Moddable<float> MoveSpeed { get; set; }
-    [field: SerializeField] public PercentBonus GroundSpeed { get; set; }
-    [field: SerializeField] public PercentBonus AirSpeed { get; set; }
+    [field: SerializeField] public Moddable<PercentBonus> GroundSpeed { get; set; }
+    [field: SerializeField] public Moddable<PercentBonus> AirSpeed { get; set; }
 }

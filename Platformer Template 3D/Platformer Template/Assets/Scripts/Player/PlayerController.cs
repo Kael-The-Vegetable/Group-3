@@ -37,10 +37,10 @@ public class PlayerController : MonoBehaviour
 
         // add the air and ground speed modifiers to the base move speed
         _movement.MoveSpeed.Modifiers.Add(new ConditionalModifier<float>(
-            modifier: _movement.GroundSpeed,
+            modifier: _movement.GroundSpeed.ModifiedValue,
             condition: () => _jumping.IsGrounded));
         _movement.MoveSpeed.Modifiers.Add(new ConditionalModifier<float>(
-            modifier: _movement.AirSpeed,
+            modifier: _movement.AirSpeed.ModifiedValue,
             condition: () => !_jumping.IsGrounded));
     }
 

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class MCStates : MonoBehaviour
@@ -9,7 +10,7 @@ public class MCStates : MonoBehaviour
     private readonly bool Healthy = true;
     // Start is called before the first frame update
     void Start()
-    { 
+    {
         // Will set the parameters to a default when the simulation starts
         mcanimate = GetComponent<Animator>();
         mcanimate.SetBool("Fall", false);

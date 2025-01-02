@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class ElectricPower : MonoBehaviour, IPowerUp
 {
+    [SerializeField] private Sprite _icon;
     [SerializeField] private PlayerStats _playerStats;
     [Header("When on Head")]
     [SerializeField, ReadOnly] private bool _headEquipped;
@@ -21,6 +22,8 @@ public class ElectricPower : MonoBehaviour, IPowerUp
     [Header("When on Leg")]
     [SerializeField, ReadOnly] private bool _legEquipped;
     [SerializeField] private PercentBonus _moveSpeedBonus;
+
+    Sprite IPowerUp.Icon => _icon;
 
     void IPowerUp.AddPowerup(PowerUpSlot.Type type)
     {

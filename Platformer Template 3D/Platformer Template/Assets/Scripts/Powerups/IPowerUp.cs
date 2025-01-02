@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public interface IPowerUp
 {
-    public Image Icon { get; }
+    public Sprite Icon { get; }
     public void AddPowerup(PowerUpSlot.Type type);
     public void RemovePowerup(PowerUpSlot.Type type);
 

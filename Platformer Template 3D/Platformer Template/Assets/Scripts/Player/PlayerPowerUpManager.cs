@@ -8,6 +8,14 @@ using UnityEngine.InputSystem;
 public class PlayerPowerUpManager : MonoBehaviour
 {
     [SerializeField] private PowerUpSlot[] _powerUpSlots;
+    private void OnValidate()
+    {
+        // Set the name for each slot in the array.
+        foreach (var slot in _powerUpSlots)
+        {
+            slot.name = slot.SlotType.ToString();
+        }
+    }
 
     [SerializeField] private ElectricPower _electricPower;
 

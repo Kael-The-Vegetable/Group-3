@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpSlot : MonoBehaviour
+[System.Serializable]
+public class PowerUpSlot
 {
+    [HideInInspector] public string name;
+
     public enum Type
     {
         Head, Body, Weapon, Arm, Leg

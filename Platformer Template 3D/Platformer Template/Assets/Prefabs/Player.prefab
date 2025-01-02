@@ -176,7 +176,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e76048c848efa41a01a4a216024494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _powerUpSlots: []
+  _powerUpSlots:
+  - name: Head
+    _type: 0
+    _currentPower: 
+  - name: Body
+    _type: 1
+    _currentPower: 
+  - name: Weapon
+    _type: 2
+    _currentPower: 
+  - name: Arm
+    _type: 3
+    _currentPower: 
+  - name: Leg
+    _type: 4
+    _currentPower: 
   _electricPower: {fileID: 4841895619767850671}
 --- !u!1 &1130507911020555555
 GameObject:
@@ -1438,6 +1453,54 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 254423b2-2115-4a21-b855-2ca7b3cf4c3b
     m_ActionName: UI/Pause/Exit[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6942160208595826025}
+        m_TargetAssemblyTypeName: PlayerPowerUpManager, Assembly-CSharp
+        m_MethodName: MeleeAttack_Control
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 094f4d60-8edd-4c3e-968d-30e542a29a34
+    m_ActionName: Player/Melee Attack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6942160208595826025}
+        m_TargetAssemblyTypeName: PlayerPowerUpManager, Assembly-CSharp
+        m_MethodName: RangedAttack_Control
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 99991b3a-2b84-4ad5-840f-134bddc248cc
+    m_ActionName: Player/Ranged Attack[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6942160208595826025}
+        m_TargetAssemblyTypeName: PlayerPowerUpManager, Assembly-CSharp
+        m_MethodName: SpecialAttack_Control
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ee6e17de-ddcf-49be-a304-bd036c6a8934
+    m_ActionName: Player/Special Attack[/Mouse/middleButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

@@ -6,7 +6,7 @@ public class PowerUpSlot : MonoBehaviour
 {
     public enum Type
     {
-        Body, Weapon, Arm, Leg1, Leg2
+        Head, Body, Weapon, Arm, Leg
     }
 
     private IPowerUp _powerUp;

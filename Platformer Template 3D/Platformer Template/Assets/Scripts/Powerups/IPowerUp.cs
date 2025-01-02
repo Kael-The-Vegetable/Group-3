@@ -7,6 +7,7 @@ public interface IPowerUp
     public void AddPowerup(PowerUpSlot.Type type);
     public void RemovePowerup(PowerUpSlot.Type type);
 
+    public void UseSpecial();
     public void WeaponAttack();
     public void RangedAttack();
     public void OnJump();

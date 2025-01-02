@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class PlayerPowerUpManager : MonoBehaviour
 {
-    
+    // Manages the players equipped power ups
 }

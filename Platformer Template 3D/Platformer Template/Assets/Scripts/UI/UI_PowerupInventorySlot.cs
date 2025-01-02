@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using JDoddsNAIT.Utilities.Components;
 
-public class UIPowerupInventorySlot : MonoBehaviour
+public class UI_PowerupInventorySlot : MonoBehaviour
 {
     [SerializeField] private int _count;
     [Space]

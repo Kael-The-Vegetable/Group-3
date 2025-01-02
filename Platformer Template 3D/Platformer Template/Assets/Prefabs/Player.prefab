@@ -176,6 +176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e76048c848efa41a01a4a216024494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _powerUpSlots: []
+  _electricPower: {fileID: 4841895619767850671}
 --- !u!1 &1130507911020555555
 GameObject:
   m_ObjectHideFlags: 3

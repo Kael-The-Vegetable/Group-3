@@ -46,4 +46,9 @@ public class PowerUpSlot : MonoBehaviour
     {
         PowerUp?.OnTakeDamage();
     }
+
+    public void SpecialAttack()
+    {
+        PowerUp?.UseSpecial();
+    }
 }
